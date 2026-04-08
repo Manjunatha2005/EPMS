@@ -24,9 +24,17 @@ app = FastAPI(
     description="AI-powered Environmental Pollution Monitoring",
 )
 
+# Comma-separated list, for example:
+# CORS_ORIGINS=https://your-frontend.onrender.com,http://localhost:3000
+cors_origins = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:3000,http://127.0.0.1:3000,https://epms-frontend.onrender.com",
+)
+allow_origins = [origin.strip() for origin in cors_origins.split(",") if origin.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000", "*"],
+    allow_origins=allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

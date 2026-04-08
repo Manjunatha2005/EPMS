@@ -1,0 +1,115 @@
+/* EPMS – Global Styles */
+
+:root {
+  --aqi-good:      #00e400;
+  --aqi-moderate:  #ffff00;
+  --aqi-sensitive: #ff7e00;
+  --aqi-unhealthy: #ff0000;
+  --aqi-very:      #8f3f97;
+  --aqi-hazardous: #7e0023;
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* KPI Cards */
+.kpi-card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+.kpi-card:hover { transform: translateY(-3px); }
+.kpi-value { line-height: 1.1; }
+
+/* Sensor cards */
+.sensor-card {
+  border-radius: 10px;
+  border-left: 5px solid #ccc;
+  transition: box-shadow 0.2s;
+}
+.sensor-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.sensor-aqi-badge {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+}
+
+/* Pollutant mini-bars */
+.pollutant-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  margin-bottom: 3px;
+}
+.pollutant-bar-bg {
+  flex: 1;
+  background: #e9ecef;
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+}
+.pollutant-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s;
+}
+
+/* Alert severity badges */
+.severity-critical { background: #7e0023 !important; color: #fff !important; }
+.severity-high     { background: #ff0000 !important; color: #fff !important; }
+.severity-moderate { background: #ff7e00 !important; color: #fff !important; }
+.severity-low      { background: #ffcc00 !important; color: #333 !important; }
+
+/* Alert cards */
+.alert-card {
+  border-left: 5px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.alert-card.critical { border-color: #7e0023; }
+.alert-card.high     { border-color: #ff0000; }
+.alert-card.moderate { border-color: #ff7e00; }
+.alert-card.low      { border-color: #ffcc00; }
+.alert-card.resolved { opacity: 0.55; }
+
+/* AQI legend */
+.aqi-legend-item {
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  font-size: 0.85rem;
+  min-width: 110px;
+}
+
+/* Hotspot table rank badge */
+.rank-badge {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Charts */
+canvas { max-width: 100%; }
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .kpi-value { font-size: 2rem !important; }
+  .sensor-aqi-badge { width: 44px; height: 44px; font-size: 1.1rem; }
+}

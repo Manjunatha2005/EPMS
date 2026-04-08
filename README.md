@@ -1,17 +1,7 @@
 # 🌿 EcoSentinel AI — Environmental Pollution Monitoring
 
 > Real-time air quality monitoring · LSTM predictions · AI chatbot · CSV data reader
-> **No Docker. No email/SMS. Just Python + Node.**
 
----
-
-
-```
-
-**Requirements:** Python 3.11+, Node.js 20+
-MongoDB is **optional** — works fully in memory-only mode.
-
----
 
 ## 📋 Manual Setup
 
@@ -99,7 +89,7 @@ ecosentinel/
 
 ---
 
-## 🔑 Environment Variables
+## Environment Variables
 
 Copy `.env.example` → `.env`:
 
@@ -111,7 +101,7 @@ Copy `.env.example` → `.env`:
 
 ---
 
-## 🧠 Train LSTM Model (optional)
+## Train LSTM Model (optional)
 
 ```bash
 cd ml
